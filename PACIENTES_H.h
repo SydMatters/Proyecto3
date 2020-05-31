@@ -1,9 +1,9 @@
 #define CLS system("cls");
 #include <stdio.h>
 struct pacientes {
-    char nombreCompleto [60];
+    char nombreCompleto[60];
     int id;
-    char documento;
+    char documento[15];
     short horaEntrada;
     char descripcion[300];
 };
@@ -33,4 +33,13 @@ char menu1()
     scanf("%c",&resp);
 
     return resp;
+}
+
+void registro()
+{
+  struct pacientes;
+  printf("ingrese el nombre del paciente:\n");
+  scanf("%s",pacientes.nombreCompleto);
+  printf("%s",pacientes.nombreCompleto);
+  	
 }
