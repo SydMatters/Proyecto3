@@ -16,6 +16,7 @@ int main()
             case 'a':
                 CLS;
                 PAUSE;
+                registro();//PACIENTES_H.h/ linea 38
                 CLS;
                 break;
             case 'b':
