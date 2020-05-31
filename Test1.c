@@ -3,34 +3,14 @@
 #define CLS system("cls");
 #define PAUSE system("pause");
 
-void salir()
-{
-    CLS;
-    printf("----------------------------------------------------------------");
-    printf("\n---------------------VUELVA PRONTO-----------------------------");
-    printf("\n---------------------------------------------------------------");
-}
 
-char menu1()
-{
-    char resp;
-    printf("--------------Consultoria Odontologico----------------");
-    printf("\na) Registro de paciente.");
-    printf("\nb) Citas agendadas en la semana.");
-    printf("\nc) Promedios de pacientes.");
-    printf("\nz) Salir.");
-    printf("\n\n A continuacion digite la opcion deseada:");
-    scanf("%c",&resp);
-
-    return resp;
-}
 int main()
 {
     struct pacientes todos[50];
 
     char oP;
     do
-    {   oP = menu1();
+    {   oP = menu1();//PACIENTES_H.h/ linea 24-36
         switch(oP)
         {
             case 'a':
@@ -50,7 +30,7 @@ int main()
                 break;
             case 'z':
                 CLS;
-                salir();
+                salir();//PACIENTES_H.h/ linea 14-22
                 break;
             default:
                 printf("\n\nOPCION NO VALIDA!!!!\n");
