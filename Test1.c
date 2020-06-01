@@ -7,7 +7,6 @@
 int main()
 {
     struct pacientes todos[50];
-
     char oP;
     do
     {   oP = menu1();//PACIENTES_H.h/ linea 24-36
@@ -15,12 +14,13 @@ int main()
         {
             case 'a':
                 CLS;
-                PAUSE;
                 registro();//PACIENTES_H.h/ linea 38
+                PAUSE;
                 CLS;
                 break;
             case 'b':
                 CLS;
+                citas();
                 PAUSE;
                 CLS;
                 break;
@@ -44,6 +44,3 @@ int main()
 
     return 0;
 }
-
-
-
