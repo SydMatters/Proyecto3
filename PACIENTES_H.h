@@ -1,13 +1,16 @@
 #define CLS system("cls");
 #include <stdio.h>
-struct pacientes {
+#include<string.h>
+#define PAUSE system("pause");
+typedef struct Pacientes {
     char nombreCompleto[60];
     int id;
+    short edad;
     char documento[15];
     char telefono[10];
     short horaEntrada;
     char descripcion[300];
-};
+} pacientes;
 
 char dias[][4]={"LUN","MAR","MIE","JUE","VIE"};
 short horas[]={7,8,9,10,11,2,3,4,5,6};
@@ -35,14 +38,49 @@ char menu1()
 
     return resp;
 }
-
-void registro()
+void menu2Consulta()
 {
-  /*struct pacientes;
-  printf("ingrese el nombre del paciente:\n");
-  scanf("%s",pacientes.nombreCompleto);
-  printf("%s",pacientes.nombreCompleto);
-  */	
+    char opCon;
+    printf("--------------Tipo de consulta ----------------");
+    printf("\nConsultar por:");
+    printf("\n\na) Id del paciente.");
+    printf("\nb) Nombre del paciente.");
+    printf("\nc) Documento de identidad del paciente.");
+    printf("\nd) Edad.");
+    printf("\ne) Telefono.");
+    printf("\nz) Salir.");
+    printf("\n\nA continuacion digite la consulta deseada:  ");
+    scanf("%c",opCon);
+}
+void registro(pacientes t[],int tam,int *poc)
+{
+  char cadt[60],d,cadt2[300];
+  short e;
+  printf("Ingrese el nombre del paciente: ");getchar();
+  fgets(cadt,60,stdin);
+  strcpy(t[*poc].nombreCompleto,cadt);
+  t[*poc].id=*poc+1;
+
+  printf("Ingrese la edad del paciente:");
+  scanf("%hi",&e);
+  t[*poc].edad=e;
+  printf("Ingrese el documento de identidad del paciente:");
+  scanf("%s",t[*poc].documento);
+  printf("Ingrese el telefono del paciente:");
+  scanf("%s",t[*poc].telefono);
+  printf("Ingrese la hora de entrada:\nRecuerde que los pacientes se atienden a horas puntuales.");
+  scanf("%hi",&e);
+  t[*poc].horaEntrada=e;
+  PAUSE;
+  CLS;
+  printf("A continuacion, por favor digite una breve descripcion del paciente.Luego de un ENTER si desea continuar presione de nuevo, sino, presione z\n");
+  do
+  {
+      gets(cadt2);
+      scanf("%c",d);
+  }while(d!='z');
+  *poc++;
+
 }
 
 void citas()
